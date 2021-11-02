@@ -8,6 +8,7 @@ TagManager:
   - Coin
   - JumpPowerup
   - NextLevel
+  - Overview
   layers:
   - Default
   - TransparentFX
