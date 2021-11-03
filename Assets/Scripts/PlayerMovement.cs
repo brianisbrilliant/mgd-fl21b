@@ -6,10 +6,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {   
     public UIController ui;
+    public Camera mainCam;          // attach the main camera here.
 
     [Tooltip("Speed multiplier for Horizontal and Vertical movement.")]
     [Range(5f,50f)]                             // adds a slider to drag
-    public float speed = 10, jumpForce = 5;
+    public float speed = 10, jumpForce = 5, dashForce = 10;
     public float resetHeight = -5;
 
     public Vector3 dir;                         // this is the direction we want to add force
@@ -39,7 +40,8 @@ public class PlayerMovement : MonoBehaviour
         }
         ResetPlayer();
         if(ui == null) ui = GameObject.Find("Canvas").GetComponent<UIController>();
-    }
+        if(mainCam == null) mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+   }
 
     void FixedUpdate() {
         rb.AddForce(dir * speed);
@@ -63,6 +65,24 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Dash() {
+        if(canDash) {
+            Debug.Log("Absolutely Dashing!");
+            // optionally, cancel out velocity to move in new direction
+            rb.velocity = Vector3.zero;
+            rb.AddForce(dir * dashForce, ForceMode.Impulse);
+            StartCoroutine(Wait());
+        }
+    }
+
+    bool canDash = true;
+
+    IEnumerator Wait(float waitTime = 1f) {
+        canDash = false;       // if true, now it is NOT true
+        yield return new WaitForSeconds(waitTime);
+        canDash = true;       // if false, now it is NOT false
+    }
+
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Floor")) {
             isGrounded = true;
@@ -77,11 +97,22 @@ public class PlayerMovement : MonoBehaviour
             PlayerPrefs.SetInt("canJump", 1);           // 1 is true, 0 is false
             Destroy(other.gameObject);
         }
+        // make sure your cameras always face the same direction
+        // make sure that the tunnel camera is the first child of the tunnel trigger
+        // make sure this code is in OnTriggerExit() as well.
+        else if(other.gameObject.CompareTag("AltCam")) {
+            mainCam.gameObject.SetActive(false);
+            other.transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
 
     void OnTriggerExit(Collider other) {
         if(other.gameObject.CompareTag("Floor")) {
             isGrounded = false;
+        }
+        else if(other.gameObject.CompareTag("AltCam")) {
+            mainCam.gameObject.SetActive(true);
+            other.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 }
