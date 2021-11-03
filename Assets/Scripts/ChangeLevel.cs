@@ -9,14 +9,16 @@ public class ChangeLevel : MonoBehaviour
     [Tooltip("The name of the level you want to go to.")]
     public string destination = "Level 2";
 
-    public void ChangeScene() {
+    void Start() {
         // if we are in the main menu, reset all PlayerPrefs
         if(SceneManager.GetActiveScene().buildIndex == 0) {
             PlayerPrefs.SetInt("Score", 0);
             PlayerPrefs.SetInt("canJump", 0);
             // canDash
         }
+    }
 
+    public void ChangeScene() {
         // use playerprefs to save the current level + 1
         PlayerPrefs.SetInt("Progress", SceneManager.GetActiveScene().buildIndex + 1);
 
