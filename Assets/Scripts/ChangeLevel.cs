@@ -17,6 +17,9 @@ public class ChangeLevel : MonoBehaviour
             // canDash
         }
 
+        // use playerprefs to save the current level + 1
+        PlayerPrefs.SetInt("Progress", SceneManager.GetActiveScene().buildIndex + 1);
+
         SceneManager.LoadScene(destination);
         PlayerMovement player = GameObject.Find("Player").GetComponent<PlayerMovement>();
         player.startPosition = GameObject.Find("Start Here").transform.position;

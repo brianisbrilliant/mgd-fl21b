@@ -9,6 +9,7 @@ TagManager:
   - JumpPowerup
   - NextLevel
   - Overview
+  - AltCam
   layers:
   - Default
   - TransparentFX
