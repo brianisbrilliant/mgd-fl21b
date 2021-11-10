@@ -87,6 +87,10 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Floor")) {
             isGrounded = true;
         }
+        if(other.gameObject.CompareTag("Sand")) {
+            isGrounded = true;
+            rb.mass *= 2;       // double the mass of the player
+        }
         else if(other.gameObject.CompareTag("Coin")) {
             Destroy(other.gameObject);
             coins++;
@@ -109,6 +113,10 @@ public class PlayerMovement : MonoBehaviour
     void OnTriggerExit(Collider other) {
         if(other.gameObject.CompareTag("Floor")) {
             isGrounded = false;
+        }
+        if(other.gameObject.CompareTag("Sand")) {
+            isGrounded = false;
+            rb.mass /= 2;       // double the mass of the player
         }
         else if(other.gameObject.CompareTag("AltCam")) {
             mainCam.gameObject.SetActive(true);

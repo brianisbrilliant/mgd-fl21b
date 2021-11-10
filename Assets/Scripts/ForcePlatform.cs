@@ -8,6 +8,14 @@ public class ForcePlatform : MonoBehaviour
     public bool zeroOutVelocity = true;
     public bool singleUse = false;
 
+    void OnDrawGizmosSelected()
+    {
+        // Draws a cyan line in the direction of the force.
+        Gizmos.color = Color.cyan;
+        Vector3 direction = transform.TransformDirection(Vector3.up) * force * .5f;
+        Gizmos.DrawRay(transform.position, direction);
+    }
+
     void OnTriggerEnter(Collider other) {
         if(other.gameObject.CompareTag("Player")) {
             // get the rigidbody component of the player

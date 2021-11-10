@@ -26,5 +26,10 @@ public class ScenePicker : MonoBehaviour
         
     }
 
+    public void ResetProgress() {
+        PlayerPrefs.SetInt("Progress", 1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
     
 }

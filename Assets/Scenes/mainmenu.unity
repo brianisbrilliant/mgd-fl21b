@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: 363369040}
   - component: {fileID: 363369039}
   - component: {fileID: 363369042}
+  - component: {fileID: 363369043}
   m_Layer: 5
   m_Name: levels Panel
   m_TagString: Untagged
@@ -514,6 +515,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1474b339818863f4dbe9fefd1ee9943b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &363369043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363369037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73341aacb1a11b84db7549f0b161c44f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelWithJump: 4
 --- !u!1 &619958995
 GameObject:
   m_ObjectHideFlags: 0
@@ -730,7 +744,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 730891271}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363369043}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &730891271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,7 +1220,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 942928717}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363369043}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 5
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &942928717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1449,7 +1487,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1150581580}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363369043}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1150581580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,7 +1754,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1335443601}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363369043}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 4
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1335443601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1825,7 +1887,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1461328780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363369043}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 7
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1461328780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1946,7 +2020,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1477605293}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363369043}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 3
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1477605293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2201,7 +2287,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1881164396}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363369043}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 6
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1881164396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2451,6 +2549,7 @@ GameObject:
   - component: {fileID: 1929798782}
   - component: {fileID: 1929798781}
   - component: {fileID: 1929798780}
+  - component: {fileID: 1929798783}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2523,6 +2622,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929798783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929798779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &2075500791
 GameObject:
   m_ObjectHideFlags: 0
@@ -2800,7 +2931,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2137868788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 363369043}
+        m_TargetAssemblyTypeName: ChangeLevel, Assembly-CSharp
+        m_MethodName: ChangeScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Level 8
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2137868788
 MonoBehaviour:
   m_ObjectHideFlags: 0

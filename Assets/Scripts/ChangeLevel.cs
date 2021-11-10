@@ -6,23 +6,36 @@ using UnityEngine.SceneManagement;      // don't forget this
                                         
 public class ChangeLevel : MonoBehaviour
 {
-    [Tooltip("The name of the level you want to go to.")]
-    public string destination = "Level 2";
+    // [Tooltip("The name of the level you want to go to.")]
+    // public string destination = "Level 2";
 
-    void Start() {
+    public int levelWithJump = 4;
+
+    void Awake() {
         // if we are in the main menu, reset all PlayerPrefs
         if(SceneManager.GetActiveScene().buildIndex == 0) {
             PlayerPrefs.SetInt("Score", 0);
             PlayerPrefs.SetInt("canJump", 0);
             // canDash
         }
+        else if(SceneManager.GetActiveScene().buildIndex >= levelWithJump) {
+            PlayerPrefs.SetInt("canJump", 1);
+        }
+        Time.timeScale = 1;         // mostly unpauses the game.
     }
 
-    public void ChangeScene() {
+    public void ChangeScene(string destination = "") {
         // use playerprefs to save the current level + 1
         PlayerPrefs.SetInt("Progress", SceneManager.GetActiveScene().buildIndex + 1);
 
-        SceneManager.LoadScene(destination);
+        if(destination == "") {
+            // player hits end of level trigger, goes to next level.
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        } else {
+            // from the scene picker or pause menu, goes to destination
+            SceneManager.LoadScene(destination);
+        }
+
         PlayerMovement player = GameObject.Find("Player").GetComponent<PlayerMovement>();
         player.startPosition = GameObject.Find("Start Here").transform.position;
         player.ResetPlayer();
