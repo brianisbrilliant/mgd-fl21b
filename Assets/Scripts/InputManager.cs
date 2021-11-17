@@ -44,7 +44,9 @@ public class InputManager : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftControl)) {
             if(Input.GetKeyDown(KeyCode.Q)) {
                 Application.Quit();
-                UnityEditor.EditorApplication.isPlaying = false;
+                #if UNITY_EDITOR
+                    UnityEditor.EditorApplication.isPlaying = false;
+                #endif
             }
         }
 
