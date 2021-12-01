@@ -10,6 +10,7 @@ TagManager:
   - NextLevel
   - Overview
   - AltCam
+  - Sand
   layers:
   - Default
   - TransparentFX

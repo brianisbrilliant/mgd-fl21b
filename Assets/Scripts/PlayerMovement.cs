@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         }
         ResetPlayer();
         if(ui == null) ui = GameObject.Find("Canvas").GetComponent<UIController>();
-        if(mainCam == null) mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        
    }
 
     void FixedUpdate() {
@@ -50,6 +50,8 @@ public class PlayerMovement : MonoBehaviour
         if(this.transform.position.y < resetHeight) {
             ResetPlayer();
         }
+
+        if(mainCam == null) mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     public void ResetPlayer() {
