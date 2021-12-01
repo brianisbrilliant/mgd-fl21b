@@ -35,10 +35,13 @@ public class ChangeLevel : MonoBehaviour
             // from the scene picker or pause menu, goes to destination
             SceneManager.LoadScene(destination);
         }
-
-        PlayerMovement player = GameObject.Find("Player").GetComponent<PlayerMovement>();
-        player.startPosition = GameObject.Find("Start Here").transform.position;
-        player.ResetPlayer();
+        // this works if your main menu and scene select are indices 0 and 1.
+        if(SceneManager.GetActiveScene().buildIndex > 1) {
+            PlayerMovement player = GameObject.Find("Player").GetComponent<PlayerMovement>();
+            player.startPosition = GameObject.Find("Start Here").transform.position;
+            player.ResetPlayer();
+        }
+        
     }
 
     void OnTriggerEnter(Collider other) {
